@@ -1,0 +1,41 @@
+# Ignore .NET Core build results
+bin/
+obj/
+
+# Ignore user-specific files
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+
+# Ignore build output directories
+out/
+publish/
+
+# Ignore logs
+*.log
+
+# Ignore temporary files
+*.tmp
+*.temp
+
+# Ignore Rider project files
+.idea/
+
+# Ignore Visual Studio Code settings
+.vscode/
+
+# Ignore Docker files
+Dockerfile
+docker-compose.yml
+docker-compose.override.yml
+
+# Ignore node_modules
+node_modules/
+
+# Ignore npm debug log
+npm-debug.log
+
+
+# Ignore wwwroot
+wwwroot/
