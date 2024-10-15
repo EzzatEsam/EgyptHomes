@@ -71,8 +71,8 @@ Create a new property listing.
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/EzzatEsam/egypt-homes-next.git
-   cd egypt-homes-next
+   git clone https://github.com/EzzatEsam/EgyptHomes.git
+   cd EgyptHomes
    ```
 
 2. **Backend Setup:**
