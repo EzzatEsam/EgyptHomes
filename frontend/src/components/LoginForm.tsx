@@ -25,6 +25,7 @@ export default function LoginForm() {
       setErrors([result.error]); // Handle sign-in errors from NextAuth
     } else {
       router.push("/"); // Redirect after successful sign-in
+      router.refresh(); // Refresh the page to show the user as signed in
     }
   };
 

@@ -1,7 +1,4 @@
-using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
 namespace EgyptHomes.Models;
 public class User : IdentityUser
 {

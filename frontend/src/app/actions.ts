@@ -15,9 +15,6 @@ import { AspError, Result } from "@/types/Result";
 import { PropertySearchDTO as SearchRequestData } from "@/types/SearchRequest";
 import { UserDTO } from "@/types/user";
 import { getAuth } from "@/lib/auth";
-import { User } from "next-auth";
-import { headers } from "next/headers";
-import { error } from "console";
 
 const ServerAddr = process.env.SERVER_ADDR || "http://localhost:3000";
 
@@ -164,7 +161,7 @@ export async function makeAuthenticatedRequest<T = undefined>(
     if (response.status === 204) {
       return { success: true };
     } else {
-      const result = response.json() as T;
+      const result = (await response.json()) as T;
       return {
         success: true,
         data: result,
@@ -302,7 +299,7 @@ export const FetchSearchResults = async (
   const session = await getAuth();
   const accessToken = session?.accessToken;
   let filteredSearchReq = Object.fromEntries(
-    Object.entries(searchReq).filter(([_, v]) => v != null)
+    Object.entries(searchReq).filter(([_, v]) => v != null && v !== "")
   );
   if (pgRequest) {
     filteredSearchReq = { ...filteredSearchReq, ...pgRequest };

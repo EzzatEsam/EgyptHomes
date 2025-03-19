@@ -1,0 +1,28 @@
+{
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "sqltools.connections": [
+        {
+            "pgOptions": {
+                "ssl": {
+                    "rejectUnauthorized": true
+                }
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "driver": "PostgreSQL",
+            "connectString": "postgresql://neondb_owner:stkm3xUy1QWd@ep-raspy-base-a2u9bpvu.eu-central-1.aws.neon.tech/neondb?sslmode=require",
+            "name": "Test2"
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "EgyptHomes",
+            "database": "EgyptHomesDbLocal",
+            "username": "postgres",
+            "password": "22"
+        }
+    ]
+}

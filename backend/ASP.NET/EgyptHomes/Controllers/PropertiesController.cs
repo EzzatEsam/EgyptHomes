@@ -91,7 +91,7 @@ ImageIOService imageIOService,
 
 
     [HttpGet("user/{id}")]
-    public async Task<ActionResult<IEnumerable<PropertyPostDto>>> GetUserProperties([BindRequired] string id, [FromQuery] PaginationRequestDTO requestDTO)
+    public async Task<ActionResult<PaginatedResult<PropertyPostDto>>> GetUserProperties([BindRequired] string id, [FromQuery] PaginationRequestDTO requestDTO)
     {
 
         var user = await _userManager.GetUserAsync(User);

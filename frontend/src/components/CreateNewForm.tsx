@@ -60,6 +60,7 @@ const DetailsForm = ({ formData, handleChange }: FormProps) => {
                   ],
               })
             }
+            required
           >
             {Object.values(PropertyCategory).map((category) => (
               <option key={category} value={category}>
@@ -428,7 +429,10 @@ const AdditionalInfoForm = ({ formData, handleChange }: FormProps) => {
 
 function CreateNewForm() {
   const router = useRouter();
-  const [formData, setFormData] = useState<Partial<FormData>>({});
+  const [formData, setFormData] = useState<Partial<FormData>>({
+    category: PropertyCategory.House,
+    propertyType: PropertyType.Buy,
+  });
   const [error, setError] = useState<string | null>(null);
   const handleChange = (data: Partial<FormData>) => {
     setFormData({ ...formData, ...data });
@@ -510,7 +514,7 @@ function CreateNewForm() {
           handleChange={handleChange}
           className={`${currentIdx === 1 ? "" : "hidden"}`}
         />
-        ,{current}
+        {current}
         {error && <AlertBox message={error} />}
         <div className="flex justify-between w-full">
           {currentIdx > 0 && (
