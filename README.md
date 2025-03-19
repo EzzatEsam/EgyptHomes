@@ -1,129 +1,184 @@
-# Egypt Homes
+## 🏡 Egypt Homes  
 
-Egypt Homes is a full-stack real estate platform designed to allow users to search, post, and explore property listings with ease. It integrates modern technologies to offer a seamless user experience for both property seekers and owners.
+Egypt Homes is a full-stack real estate platform that allows users to search, post, and explore property listings with ease. It integrates modern technologies to provide a seamless user experience for both property seekers and owners.  
 
-## Key Features
+---
 
-- **Full-Featured Property Listings**: Users can browse a wide range of properties, complete with detailed information like price, location, size, and amenities.
-- **Advanced Search Filters**: The search functionality includes filtering by governorate, city, property type (house, office), price range, and amenities, making it easier to find relevant properties.
-- **User Authentication**: Sign-in and registration are supported via standard local credentials or through OAuth2 with Google using NextAuth.
-- **JWT Authentication**: Secure authentication and session management using JSON Web Tokens (JWT) for the backend API.
-- **Bookmarking & Contacting**: Users can bookmark properties and directly contact property owners via phone, email, or WhatsApp.
-- **Paginated Results**: The platform supports paginated results, ensuring a smooth experience even with large data sets.
-- **Responsive UI**: The front-end is built with Next.js and styled using TailwindCSS and DaisyUI, offering a modern and responsive user interface.
+## **🚀 Key Features**  
 
-## Tech Stack
+- **Full-Featured Property Listings** – Browse properties with detailed info like price, location, size, and amenities.  
+- **Advanced Search Filters** – Filter by governorate, city, property type (house, office), price range, and amenities.  
+- **User Authentication** – Supports sign-in via local credentials or OAuth2 with Google (NextAuth).  
+- **JWT Authentication** – Secure authentication and session management with JSON Web Tokens (JWT).  
+- **Bookmarking & Contacting** – Save properties and contact owners via phone, email, or WhatsApp.  
+- **Paginated Results** – Smooth performance with large datasets.  
+- **Responsive UI** – Built with Next.js, TailwindCSS, and DaisyUI for a modern experience.  
+- **Multiple Backend Support** – Available in both **ASP.NET Core** and **Spring Boot (Java)** versions.  
 
-- **Backend**:
-  - ASP.NET Core
-  - Entity Framework Core
-  - PostgreSQL (Remote database)
-  - JWT Authentication
-- **Frontend**:
+---
 
-  - Next.js (React Framework)
-  - TailwindCSS (for modern UI components)
-  - DaisyUI (for pre-built UI elements)
+## **🛠 Tech Stack**  
 
-- **Authentication**:
-  - NextAuth.js for OAuth2 (Google Sign-in)
-- **Additional Technologies**:
-  - Image upload support for property listings
-  - REST API design for communication between the frontend and backend
+### **Backend**  
+Ther are two backend implementations:  
 
-## Screenshots
+✅ **Option 1: ASP.NET Core Backend**  
+- ASP.NET Core  
+- Entity Framework Core  
+- PostgreSQL (Remote database)  
+- JWT Authentication  
 
-### Login Page
+✅ **Option 2: Java (Spring Boot) Backend**  
+- Java (Spring Boot)  
+- Spring Security (JWT-based authentication)  
+- PostgreSQL  
+- JPA/Hibernate  
 
+### **Frontend**  
+- Next.js (React Framework)  
+- TailwindCSS (for modern UI components)  
+- DaisyUI (for pre-built UI elements)  
+
+### **Authentication**  
+- NextAuth.js for OAuth2 (Google Sign-in)  
+
+### **Additional Features**  
+- Image upload support for property listings  
+- REST API for frontend-backend communication  
+
+---
+
+## **📸 Screenshots**  
+
+### **Login Page**  
 ![Login Page](/.github/images/login.png)  
-Sign in with Google to access your account.
+Sign in with Google to access your account.  
 
-### Home Page
-
+### **Home Page**  
 ![Home Page](/.github/images/home.png)  
-Browse recent properties with price and key details such as size, number of rooms, and location.
+Browse recent properties with price and key details.  
 
-### Property Search
-
+### **Property Search**  
 ![Search Page](/.github/images/search.png)  
-Utilize filters to narrow down properties by location, price, and type.
+Filter properties by location, price, and type.  
 
-### Property Details
-
+### **Property Details**  
 ![Property Details](/.github/images/preview.png)  
-View property details and contact owners directly.
+View property details and contact owners directly.  
 
-### Create New Property
-
+### **Create New Property**  
 ![Create New Property](/.github/images/add.png)  
-Create a new property listing.
+Create a new property listing.  
 
-## How to Use
+---
 
-### Prerequisites
+## **💻 How to Run the Project**  
 
-- [.NET 8.0 SDK](https://dotnet.microsoft.com/download)
-- [Node.js](https://nodejs.org/)
-- A running [PostgreSQL](https://www.postgresql.org/download/) database
+### **Prerequisites**  
+- [PostgreSQL](https://www.postgresql.org/download/) (Database)  
+- [Node.js](https://nodejs.org/) (Frontend)  
+- **Choose a backend option:**  
+  - **For .NET Backend:** [.NET 8.0 SDK](https://dotnet.microsoft.com/download)  
+  - **For Java Backend:** [Java 17+](https://adoptium.net/) & [Maven](https://maven.apache.org/)  
 
-### Installation
+---
 
-1. **Clone the repository:**
+### **🔹 Option 1: Setup ASP.NET Core Backend**  
 
-   ```bash
-   git clone https://github.com/EzzatEsam/EgyptHomes.git
-   cd EgyptHomes
-   ```
+1️⃣ **Clone the repository:**  
+```bash
+git clone https://github.com/EzzatEsam/EgyptHomes.git
+cd EgyptHomes
+```
 
-2. **Backend Setup:**
+2️⃣ **Setup the Backend:**  
+- Navigate to the backend folder  
+- Configure `appsettings.json` with database credentials  
+- Run database migrations:  
+  ```bash
+  dotnet ef migrations add InitialCreate
+  dotnet ef database update
+  ```
+- Start the backend:  
+  ```bash
+  dotnet run
+  ```
 
-   - Navigate to the backend directory and set up the database connection string in `appsettings.json`.
-   - Migrate the database:
-     ```bash
-     dotnet ef migrations add InitialCreate
-     dotnet ef database update
-     ```
-   - Run the backend:
-     ```bash
-     dotnet run
-     ```
+---
 
-3. **Frontend Setup:**
+### **🔹 Option 2: Setup Java (Spring Boot) Backend**  
 
-   - Navigate to the frontend directory:
-     ```bash
-     cd frontend
-     npm install
-     npm run dev
-     ```
+1️⃣ **Clone the repository:**  
+```bash
+git clone https://github.com/EzzatEsam/EgyptHomes.git
+cd EgyptHomes
+```
 
-4. **Environment Variables:**
+2️⃣ **Configure Database in `application.properties`:**  
+```properties
+spring.datasource.url=jdbc:postgresql://your-database-url:5432/your-db
+spring.datasource.username=your-username
+spring.datasource.password=your-password
+```
 
-#### Backend
+3️⃣ **Run the backend:**  
+```bash
+mvn spring-boot:run
+```
 
-- `JwtAuth:`: JWT authentication configuration.
-- `database:default`: Connection string for your postgres database.
-- `Google:cid`: Google client ID.
+---
 
-#### Frontend
+### **🔹 Frontend Setup (For All Backends)**  
 
-- `SERVER_ADDR`: Backend server address.
-- `AUTH_SECRET`: Secret key for NextAuth.
-- `GOOGLE_CLIENT_ID`: Google client ID.
-- `GOOGLE_CLIENT_SECRET`: Google client secret.
+1️⃣ **Navigate to the frontend directory:**  
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
-### Usage
+2️⃣ **Configure Environment Variables (`.env.local`):**  
+```ini
+NEXT_PUBLIC_SERVER_ADDR=http://localhost:8080  # Java Backend
+# OR
+NEXT_PUBLIC_SERVER_ADDR=http://localhost:5000  # .NET Backend
 
-- **Sign up**: Users can sign up using local credentials or Google.
-- **Post a property**: Authenticated users can post a property with details like price, location, and images.
-- **Search**: Filter properties based on your preferences and contact property owners directly.
-- **Bookmark**: Save properties for later.
-- **Contact**: Directly contact property owners via phone, email, or WhatsApp.
+NEXTAUTH_SECRET=your-secret-key
+GOOGLE_CLIENT_ID=your-google-client-id
+GOOGLE_CLIENT_SECRET=your-google-client-secret
+```
 
-## Contributing
+---
 
-Feel free to submit pull requests if you'd like to contribute to the project. Make sure to follow standard best practices for code quality and testing.
+## **📌 API Configuration**  
 
-## License
+### **Backend Environment Variables**  
 
-This project is licensed under the MIT License.
+| Variable | Description |
+|----------|------------|
+| `JWT_SECRET` | Secret key for JWT authentication |
+| `DATABASE_URL` | Connection string for PostgreSQL |
+| `GOOGLE_CLIENT_ID` | Google OAuth Client ID |
+| `GOOGLE_CLIENT_SECRET` | Google OAuth Client Secret |
+
+---
+
+## **🚀 Usage**  
+
+- **Sign up**: Create an account using email/password or Google.  
+- **Post a property**: Add property details like price, location, and images.  
+- **Search**: Find properties based on filters.  
+- **Bookmark**: Save properties for later.  
+- **Contact**: Reach owners via phone, email, or WhatsApp.  
+
+---
+
+## **🤝 Contributing**  
+
+Feel free to submit pull requests! Follow standard best practices for clean and tested code.  
+
+---
+
+## **📜 License**  
+
+This project is licensed under the **MIT License**.  
